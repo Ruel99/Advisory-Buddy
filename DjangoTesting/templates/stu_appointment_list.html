@@ -1,0 +1,46 @@
+{% extends "base2.html" %}
+
+{% block sentence %} Your Appointments {% endblock sentence %}
+
+{% block content %}
+<table class="table table-borderless">
+    <thead class="boder-bottom font-weight-bold">
+        <tr>
+            <td> <strong> Full Name </strong> </td>
+            <td> <strong> Email </strong> </td>
+            <td> <strong> Staff Member </strong> </td>
+            <td> <strong> Description </strong> </td>
+            <td> <strong> Date/Time </strong> </td>
+
+            <td>
+                <a href="{% url 'appointment_insert' %}" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i>Add New
+                </a> 
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for appointment in appointment_list %}
+            <tr>
+                <td> {{appointment.fullname}} </td>
+                <td> {{appointment.email}} </td>
+                <td> {{appointment.person_of_intrest}} </td>
+                <td> {{appointment.description}} </td>
+                <td> {{appointment.date}} / {{appointment.time}} </td>
+                <td>
+                    <a href="{% url 'appointment_update' appointment.id %}" class="btn text-secondary px-0">
+                        <i class="far fa-edit fa-lg"></i>
+                    </a>
+
+                    <form action="{% url 'appointment_delete' appointment.id %}" method="POST" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">
+                            <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

@@ -1,0 +1,69 @@
+{% extends "base2.html" %}
+{% block title %} Sign Up {% endblock %}
+
+
+{% block content %}
+    <section class="container-fluid" id="home_section">
+        <div class="row">
+            <div class="col-12 ">
+                {% if user.is_authenticated %}
+                    <h1>Welcome {{ user.first_name }} to Advisory Buddy</h1>
+                {% endif %}
+            </div>
+        </div>
+<br>
+{% if user.is_authenticated %}
+        {% for group in user.groups.all %}
+            {% if group.name == "student" %}
+
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6" style="text-align: center;">
+                        <h4>Create An Appointment</h4>
+                        <p style="text-align: center;">Book an appointment with a member of staff from  the Finance, Academic or Records department.
+                        click here to do so.
+                        </p>
+                        <a class="btn btn-primary" href="{% url 'appointment_insert' %}" role="button">Create Appointment</a>
+                    </div>
+
+                    <div class="col-sm-12 col-lg-6" style="text-align: center;">
+                        <h4>View Your Appointments</h4>
+                        <p style="text-align: center;">View, update or delete any appointment you created </p>
+                        <a class="btn btn-primary" href="{% url 'appointment_list' %}" role="button">View Appointment</a>
+                    </div>                    
+                </div>
+
+            {% elif group.name == "staff"%}
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6" style="text-align: center;">
+                        <h4>View Your Appointments</h4>
+                        <p style="text-align: center;">View or delete any appointment that was assigned to you </p>
+                        <a class="btn btn-primary" href="{% url 'appointment_list' %}" role="button">View Appointment</a>
+                    </div>
+
+                </div>
+            {% elif group.name == "admin"%}
+                <div class="row">
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-6" style="text-align: center;">
+                            <h4>Create An Appointment</h4>
+                            <p style="text-align: center;">Book an appointment with a member of staff from  the Finance, Academic or Records department.
+                            click here to do so.
+                            </p>
+                            <a class="btn btn-primary" href="{% url 'appointment_insert' %}" role="button">Create Appointment</a>
+                        </div>
+    
+                        <div class="col-sm-12 col-lg-6" style="text-align: center;">
+                            <h4>View  Appointments</h4>
+                            <p style="text-align: center;">View, update or delete any appointment you created </p>
+                            <a class="btn btn-primary" href="{% url 'appointment_list' %}" role="button">View Appointment</a>
+                        </div>                    
+                    </div>                   
+                </div>  
+            {% endif %}
+        {% endfor %} 
+        
+{% endif %}
+                
+    </section>
+    
+{% endblock %}

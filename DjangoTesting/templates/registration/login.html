@@ -1,0 +1,17 @@
+{% extends "base2.html" %}
+{% block title %} Login {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<section class="container-fluid" id="home_section">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <p>Don't have an account? Create one <a href="/sign-up"> Here</a>!</p>
+        <p>Forgot your password? Click <a href="/reset_password"> Here</a>!</p>
+        <button class="btn btn-success" type="submit">Login</button>
+    </form>
+
+</section>
+    
+{% endblock %}

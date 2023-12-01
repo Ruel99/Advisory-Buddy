@@ -1,0 +1,232 @@
+*{
+    box-sizing: border-box;
+  }
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+#home_section{
+    padding:70px 50px;
+}
+
+#appointment_section{
+    padding: 50px;
+    margin: 0px 50px 0px 50px;
+    background-color: #E1E1E0;
+}
+
+  /*THIS MIGHT BE THE PROBLEM*/
+h1, h2, h3, h4{
+    text-align: center;
+    margin: 3rem 0 1.38rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    line-height: 1.3;
+    
+}
+
+h1{
+    margin-top: 0;
+    font-size: 4.209rem;
+    text-align: center;
+    
+}
+  
+h2 {
+    font-size: 3.157rem;
+    text-align: center;
+}
+
+h3 {font-size: 2.369rem;}
+
+p{
+    font-family: 'Merriweather', serif;
+    margin-bottom: 1rem;
+    color: #676767;
+    font-size: 1rem;
+}
+
+/*MAYBE THE END OF THE PROBLEM*/
+
+.sub_bnt{
+    background-color: #CC2936;
+    border-radius: 4px;
+    border: #CC2936;
+    color: #ffffff;
+    margin-top:15px;
+    width:100%;
+    text-decoration: none;
+    font-size:16px;
+    padding:10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+/*
+.update_bnt{
+    background-color: #2db3db;
+    border-radius: 4px;
+    border: #2db3db;
+    color: #ffffff;
+    margin-top:15px;
+    width:100%;
+    text-decoration: none;
+    font-size:16px;
+    padding:10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.delete_bnt{
+    background-color: #CC2936;
+    border-radius: 4px;
+    border: #CC2936;
+    color: #ffffff;
+    margin-top:15px;
+    width:100%;
+    text-decoration: none;
+    font-size:16px;
+    padding:10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+*/
+
+/*NAVBAR STYLING*/
+
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3c5be7;
+    color:#ffffff;
+}
+
+.navbar-link-title{
+  font-size:xx-large;
+  color:#ffffff;
+  margin-top: 20px;
+  text-decoration: none;
+  margin-left: 40px;
+}
+
+.navbar-link-title:hover{
+  color:#ffffff;
+}
+
+.navbar-links ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li{
+    list-style: none;
+
+}
+
+.navbar-links li a{
+   text-decoration: none;
+   color: #ffffff;
+   padding: 1rem;
+   display: block;
+}
+
+.navbar-links li a:hover{
+    color:#F5F5F5;
+}
+
+
+/*HAMBURGER EXTRA STUFF*/
+.toggle-button{
+  position: absolute;
+  top: .75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar{
+   height:3px;
+   width:100%;
+   background-color: #ffffff;
+   border-radius: 10px;
+}
+
+/*MAIN HAMBURGER MENU STYLING*/
+/*HAMBURGER MENU*/
+@media(max-width: 990px){
+    .toggle-button{
+        display: flex;
+       
+    }
+ 
+    .navbar-links{
+        display:none;
+        width: 100%;
+    }
+ 
+    #navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+ 
+    .navbar-links ul{
+        width: 100%;
+        flex-direction: column;
+    }
+ 
+    .navbar-links li{
+        text-align: center;
+    }
+ 
+    .navbar-links li a{
+        padding: .5rem 1rem;
+    }
+ 
+    .navbar-links.active{
+        display: flex;
+    }
+}
+
+/*FOOTTER STYLING*/
+#footer_section{
+    background-color: #313131;
+    /*padding:30px;*/
+    color:#ffffff;
+    
+}
+
+footer{
+    margin-top: auto;
+}
+
+#footer_section i{
+    color:#ffffff;
+    font-size: 25px;
+    margin-right: 10px;;
+   
+}
+
+#footer_section p{
+  color:#d6d6d6
+}
+
+#icon{
+    text-align: center;
+}
+
+footer p{
+text-align: center;
+font-size: small;
+}

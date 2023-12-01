@@ -1,0 +1,58 @@
+{% extends "base2.html" %}
+{% load crispy_forms_tags %}
+
+{% block sentence %} Create Appointment {% endblock sentence %}
+
+{% block content %}
+<form action="" method="POST" autocomplete="off">
+    {% csrf_token %}
+
+    {{ form.fullname|as_crispy_field }}
+    {{ form.email|as_crispy_field }}
+    {{ form.mobile|as_crispy_field }}
+    {{ form.person_of_intrest|as_crispy_field }}
+    {{ form.department|as_crispy_field }}
+    {{ form.description|as_crispy_field }}
+    <div class="row">
+        <div class="col-md-6">
+            {{ form.date|as_crispy_field }}
+        </div>
+        <div class="col-md-6">
+            {{ form.time|as_crispy_field }}
+        </div>
+    </div>   
+    <!--Displays the error message in the form-->
+    {% if form.time.errors %}
+        <div class="alert alert-danger">
+            {{ form.time.errors.0 }}
+        </div>
+    {% endif %}
+
+
+    <div class="row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-success btn-block btn-lg"> <i class="fas fa-database"></i> Submit </button>
+        </div>
+
+        <div class="col-md-4">
+            <!--changes the links depending on the group the user is in-->
+            {% if user.is_authenticated %}
+            {% for group in user.groups.all %}
+                {% if group.name == "student" %}
+                    <a href="{% url 'stu_appointment_list' %}" class="btn btn-secondary btn-block btn-lg">
+                        <i class="fas fa-stream"></i> Back to List
+                    </a>
+                {% else %}
+                    <a href="{% url 'appointment_list' %}" class="btn btn-secondary btn-block btn-lg">
+                        <i class="fas fa-stream"></i> Back to List
+                    </a>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        </div>
+
+    </div>
+    
+
+</form>
+{% endblock content %}
