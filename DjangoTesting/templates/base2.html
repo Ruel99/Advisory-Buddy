@@ -57,8 +57,12 @@
                                 
                                 
                             {% elif group.name == "admin"%}
-                                <li class="navbar-item">
+                                <li class="navbar-item" style="text-decoration: none;">
                                     <a class="nav-link" href="{% url 'appointment_list' %}">Appointments</a>
+                                </li>
+
+                                <li class="navbar-item">
+                                    <a class="nav-link" href="/admin">Admin</a>
                                 </li>
                                        
                             {% endif %}
