@@ -11,7 +11,7 @@ urlpatterns =[
     
    
     #general pages
-    path('', views.defaultHome, name='defaultHome'),
+    path('', views.index, name='index'),
     path('courses', views.courses, name='courses'),
     path('info', views.info, name='info'),
 

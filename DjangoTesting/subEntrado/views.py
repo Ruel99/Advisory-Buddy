@@ -18,8 +18,8 @@ from django.core.mail import send_mail
 
 # Create your views here.
 @unauthenticated_user
-def defaultHome(request):
-    return render(request, 'defaultHome.html' )
+def index(request):
+    return render(request, 'index.html' )
 
 
 #------------------------------------------------------------------------------------------------------------
@@ -195,7 +195,5 @@ def info(request):
 
 
 
-def SE2StudentHomeV2 (request):   
-    return render (request, 'SE2StudentHomeV2.html' )
 
 
