@@ -22,6 +22,10 @@
       {
         "src": "/(.*)",
         "dest": "Entrado/wsgi.py"
+      },
+      {
+        "src": "/",
+        "dest": "/"
       }
     ]
   }
