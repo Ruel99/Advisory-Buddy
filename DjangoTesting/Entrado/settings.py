@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-mc!mt2gz_n7ys0k=*s!mpxvbei$oyt1#ubx7)cmnb2ai8=%rs3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vrcel.app', '.now.sh', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -78,14 +78,15 @@ WSGI_APPLICATION = 'Entrado.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'AppointmentSystemDB2',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'PASSWORD': '4eDF1e5Ec6aaE*e1eAfba*be5EAc3dfd',
+        'HOST': 'viaduct.proxy.rlwy.net',
+        'PORT': '46791'
     }
 }
 
@@ -125,7 +126,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
